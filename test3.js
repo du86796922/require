@@ -5,4 +5,6 @@ var testMultiplication=function (a,b) {
     return a*b;
 };
 
-console.log('test3');
+var testDivision=function (a, b) {
+    return a/b;
+};
