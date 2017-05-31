@@ -13,16 +13,25 @@ require.config({
         //键名jquery不可更改，因为其已经定义
         testAdd:'test1',
         testSubtract:'test1',
-        test2:'test2'
+        test2:'test2',
+        test3:'test3',
+        report:'report',
+        angular:'common/angular',
+        'angular-ui-router':'common/angular-ui-router'
     },
     shim:{
-        //为那些没有使用define()来声明依赖关系、设置模块的"浏览器全局变量注入"型脚本做依赖和导出配置
-        //
-        test2:{deps:['jquery']}
-        // testMultiplication:{exports:'testMultiplicatio'}
+        //为那些没有使用define()来声明依赖关系的
+        test2:['jquery'],//简写
+        // test3:{exports:'test3'},
+        'angular-ui-router':{deps:['angular']/*,exports:'ui-route'*/},
+        angular:{exports:'angular'}//当需要用到其方法
     }
 });
 
-require(['test2']);
+require(['test2'],function (t) {
+    //do something
+});
 //require的是模块，不是js文件，加载js文件也只是为了找到这个模块
 //可直接在数组中写路径以加载js文件
+
+// require(['report']);

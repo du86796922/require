@@ -1,8 +1,9 @@
 /**
  * Created by twy on 2017/5/30.
  */
-define(['testAdd','test3'],function (add) {
+define(['testAdd','test3'],function (add,test3) {
     $('#box1').html(add(1,5));
+    $('#box3').html(test3.testMultiplication(1,5));
 });
 
 define(function (require) {
