@@ -10,7 +10,8 @@ require.config({
         //指定各个模块的加载路径
         jquery: ['https://code.jquery.com/jquery-3.2.1', 'jquery-3.2.1'],
         //允许数组值,用以备选
-        //键名jquery不可更改，因为其已经定义
+        //键名jquery不可更改，因为其已经定义,是有主的
+        //可以采用挖墙脚的方式更改为可自由命名的、无主的
         testAdd: 'test1',
         testSubtract: 'test1',
         test2: 'test2',
@@ -22,6 +23,7 @@ require.config({
     shim: {
         //为那些没有使用define()来声明依赖关系的
         //并非所有的非amd规范的都要在这里配置
+        //AMD规范文档：https://github.com/amdjs/amdjs-api/wiki/AMD-(%E4%B8%AD%E6%96%87%E7%89%88)
         test2: ['jquery'],//简写
         test3: {
             exports: 'a',
